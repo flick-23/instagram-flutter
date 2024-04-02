@@ -17,15 +17,24 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        return android;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for android - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,23 +52,6 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAn6utYhJBRdruHSe7Xbk8bSJlPazUJYWs',
-    appId: '1:965853850603:web:726de32df54297e8e247ae',
-    messagingSenderId: '965853850603',
-    projectId: 'instagram-tut-2727d',
-    authDomain: 'instagram-tut-2727d.firebaseapp.com',
-    storageBucket: 'instagram-tut-2727d.appspot.com',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCHYhFWZnG9H_qpFD0rJ0RdB52IpXZwEr0',
-    appId: '1:965853850603:android:2c1b981eeff212f8e247ae',
-    messagingSenderId: '965853850603',
-    projectId: 'instagram-tut-2727d',
-    storageBucket: 'instagram-tut-2727d.appspot.com',
-  );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCOTqpE5xe_GxJRDHIs-myQGNXX0P0hMrM',
     appId: '1:965853850603:ios:bce83a2216e136c7e247ae',
@@ -67,14 +59,5 @@ class DefaultFirebaseOptions {
     projectId: 'instagram-tut-2727d',
     storageBucket: 'instagram-tut-2727d.appspot.com',
     iosBundleId: 'com.example.instagramFlutter',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCOTqpE5xe_GxJRDHIs-myQGNXX0P0hMrM',
-    appId: '1:965853850603:ios:091207070fb5ac7be247ae',
-    messagingSenderId: '965853850603',
-    projectId: 'instagram-tut-2727d',
-    storageBucket: 'instagram-tut-2727d.appspot.com',
-    iosBundleId: 'com.example.instagramFlutter.RunnerTests',
   );
 }
