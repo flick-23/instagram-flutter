@@ -151,11 +151,11 @@ class _AddPostScreenState extends State<AddPostScreen> {
                     : const Padding(
                         padding: EdgeInsets.only(top: 0),
                       ),
+                const Divider(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Divider(),
                     CircleAvatar(
                       radius: 30,
                       backgroundImage:
